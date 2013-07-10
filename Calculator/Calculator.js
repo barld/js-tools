@@ -19,7 +19,7 @@ var calculate = function(form)
 {
     var display = form.display.value;
     //string moet gespit worden in meerdere delen om er iets mee te kunnen
-    if(display.length >= 3)
+    if(display != parseFloat(display) )
     {
         var antwoord;
         if(display.search("\\+") !=-1)//check voor optelsom
@@ -38,7 +38,6 @@ var calculate = function(form)
             antwoord = parseFloat(parts[0])*parseFloat(parts[1]);
         }
         form.display.value = antwoord;
-
     }
     else
     {
