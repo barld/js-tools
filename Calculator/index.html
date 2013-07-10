@@ -2,28 +2,10 @@
 <html>
 <head>
     <title>test</title>
-    <style>
-        input[type="button"]
-        {
-            height: 40px;
-            width: 40px;
-            margin-top: 2px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="CalculatorForm.css" />
+    <script src="Calculator.js"></script>
 </head>
 <body>
-
-    <script>
-        var addNumber = function(number, form)
-        {
-            if(form.display.value.length<20)
-            {
-                var firstnumber = form.display.value;
-                form.display.value = firstnumber+number;
-            }
-        };
-    </script>
-
     <form>
         <input type="text" name="display" id="display" maxlength="20" />
         <br/>
