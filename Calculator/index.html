@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <style>
+        input[type="button"]
+        {
+            height: 40px;
+            width: 40px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        var addNumber = function(number, form)
+        {
+            if(form.display.value.length<20)
+            {
+                var firstnumber = form.display.value;
+                form.display.value = firstnumber+number;
+            }
+        };
+    </script>
+
+    <form>
+        <input type="text" name="display" id="display" maxlength="20" />
+        <br/>
+        <input type="button" value="1" onclick="addNumber(1 , this.form)" />
+        <input type="button" value="2" onclick="addNumber(2 , this.form)" />
+        <input type="button" value="3" onclick="addNumber(3, this.form)" />
+        <input type="button" value="+" onclick="addNumber('+', this.form)" />
+        <br/>
+        <input type="button" value="4" onclick="addNumber(4, this.form)" />
+        <input type="button" value="5" onclick="addNumber(5, this.form)" />
+        <input type="button" value="6" onclick="addNumber(6, this.form)" />
+        <input type="button" value="-" onclick="addNumber('-', this.form)" />
+        <br/>
+        <input type="button" value="7" onclick="addNumber(7, this.form)" />
+        <input type="button" value="8" onclick="addNumber(8, this.form)" />
+        <input type="button" value="9" onclick="addNumber(9, this.form)" />
+        <input type="button" value="*" onclick="addNumber('*', this.form)" />
+        </br>
+        <input type="button" value=" " onclick="addNumber('', this.form)" />
+        <input type="button" value="0" onclick="addNumber(0, this.form)" />
+        <input type="button" value="." onclick="addNumber('.', this.form)" />
+        <input type="button" value="=" onclick="addNumber('=', this.form)" />
+    </form>
+</body>
+</html>
