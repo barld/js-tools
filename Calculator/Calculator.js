@@ -5,42 +5,45 @@
  */
 
 
-// functie om in display getallen en symbolen toe te voegen.
-var addNumber = function(number, form)
+function Calculator()
 {
-    if(form.display.value.length<20)
+    // functie om in display getallen en symbolen toe te voegen.
+    this.addNumber = function(number)
     {
-        var firstnumber = form.display.value;
-        form.display.value = firstnumber+number;
-    }
-};
+        if(document.getElementById('display').value.length<20)
+        {
+            var firstnumber = document.getElementById('display').value;
+            document.getElementById('display').value = firstnumber+number;
+        }
+    };
 
-var calculate = function(form)
-{
-    var display = form.display.value;
-    //string moet gespit worden in meerdere delen om er iets mee te kunnen
-    if(display != parseFloat(display) )
+    this.calculate = function()
     {
-        var antwoord;
-        if(display.search("\\+") !=-1)//check voor optelsom
+        var display = document.getElementById('display').value;
+        //string moet gespit worden in meerdere delen om er iets mee te kunnen
+        if(display != parseFloat(display) )
         {
-            var parts = display.split("+");
-            antwoord = parseFloat(parts[0])+parseFloat(parts[1]);
+            var antwoord;
+            if(display.search("\\+") !=-1)//check voor optelsom
+            {
+                var parts = display.split("+");
+                antwoord = parseFloat(parts[0])+parseFloat(parts[1]);
+            }
+            if(display.search("\\-") !=-1)//check voor aftrekken
+            {
+                var parts = display.split("-");
+                antwoord = parseFloat(parts[0])-parseFloat(parts[1]);
+            }
+            if(display.search("\\*") !=-1)//check voor vermenigvuldigen
+            {
+                var parts = display.split("*");
+                antwoord = parseFloat(parts[0])*parseFloat(parts[1]);
+            }
+            document.getElementById('display').value = antwoord;
         }
-        if(display.search("\\-") !=-1)//check voor aftrekken
+        else
         {
-            var parts = display.split("-");
-            antwoord = parseFloat(parts[0])-parseFloat(parts[1]);
+            alert("je moet het wel goed invullen");
         }
-        if(display.search("\\*") !=-1)//check voor vermenigvuldigen
-        {
-            var parts = display.split("*");
-            antwoord = parseFloat(parts[0])*parseFloat(parts[1]);
-        }
-        form.display.value = antwoord;
-    }
-    else
-    {
-        alert("je moet het wel goed invullen");
-    }
+    };
 };

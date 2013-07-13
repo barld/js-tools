@@ -3,31 +3,48 @@
 <head>
     <title>Calculator</title>
     <link rel="stylesheet" type="text/css" href="CalculatorForm.css" />
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37303062-1']);
+        _gaq.push(['_setDomainName', 'barld.nl']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
     <script src="Calculator.js"></script>
 </head>
 <body>
-    <form>
-        <input type="text" name="display" id="display" maxlength="20" />
+    <form action="javascript:void(0);">
+        <script>
+            var Calculator = new Calculator();
+        </script>
+        <input type="text" name="display" id="display" maxlength="20" autofocus="autofocus" />
         <br/>
-        <input type="button" value="1" onclick="addNumber(1 , this.form)" />
-        <input type="button" value="2" onclick="addNumber(2 , this.form)" />
-        <input type="button" value="3" onclick="addNumber(3, this.form)" />
-        <input type="button" value="+" onclick="addNumber('+', this.form)" />
+        <input class="number" type="button" value="1" onclick="Calculator.addNumber(1)" />
+        <input class="number" type="button" value="2" onclick="Calculator.addNumber(2)" />
+        <input class="number" type="button" value="3" onclick="Calculator.addNumber(3)" />
+        <input type="button" value="+" onclick="Calculator.addNumber('+')" />
         <br/>
-        <input type="button" value="4" onclick="addNumber(4, this.form)" />
-        <input type="button" value="5" onclick="addNumber(5, this.form)" />
-        <input type="button" value="6" onclick="addNumber(6, this.form)" />
-        <input type="button" value="-" onclick="addNumber('-', this.form)" />
+        <input class="number" type="button" value="4" onclick="Calculator.addNumber(4)" />
+        <input class="number" type="button" value="5" onclick="Calculator.addNumber(5)" />
+        <input class="number" type="button" value="6" onclick="Calculator.addNumber(6)" />
+        <input type="button" value="-" onclick="Calculator.addNumber('-')" />
         <br/>
-        <input type="button" value="7" onclick="addNumber(7, this.form)" />
-        <input type="button" value="8" onclick="addNumber(8, this.form)" />
-        <input type="button" value="9" onclick="addNumber(9, this.form)" />
-        <input type="button" value="*" onclick="addNumber('*', this.form)" />
+        <input class="number" type="button" value="7" onclick="Calculator.addNumber(7)" />
+        <input class="number" type="button" value="8" onclick="Calculator.addNumber(8)" />
+        <input class="number" type="button" value="9" onclick="Calculator.addNumber(9)" />
+        <input type="button" value="*" onclick="Calculator.addNumber('*')" />
         </br>
-        <input type="button" value=" " onclick="addNumber('', this.form)" />
-        <input type="button" value="0" onclick="addNumber(0, this.form)" />
-        <input type="button" value="." onclick="addNumber('.', this.form)" />
-        <input type="button" value="=" onclick="calculate(this.form)" />
+        <input type="button" value=" " onclick="Calculator.addNumber('')" />
+        <input class="number" type="button" value="0" onclick="Calculator.addNumber(0)" />
+        <input type="button" value="." onclick="Calculator.addNumber('.')" />
+        <input type="submit" value="=" onclick="Calculator.calculate()" />
     </form>
 </body>
-</html>
+</html>ś

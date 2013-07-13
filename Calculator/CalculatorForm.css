@@ -1,6 +1,13 @@
-input[type=button]
+input[type=button], input[type=submit]
 {
     width: 40px;
     height: 40px;
     margin-top: 3px;
+}
+
+.number{
+    background-color: blue;
+}
+.number:hover{
+    background-color: lightblue
 }
