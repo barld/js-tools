@@ -7,24 +7,35 @@
 
 function Calculator()
 {
+    this.getDisplay = function()
+    {
+        return document.getElementById('display').value;
+    }
+
+    this.setDisplay = function(value)
+    {
+        document.getElementById('display').value = value;
+        return true;
+    };
+
     // functie om in display getallen en symbolen toe te voegen.
     this.addCharter = function(number)
     {
-        if(document.getElementById('display').value.length<20)
+        if(this.getDisplay().length<20)
         {
-            var firstnumber = document.getElementById('display').value;
-            document.getElementById('display').value = firstnumber+number;
+            var firstnumber = this.getDisplay();
+            this.setDisplay(firstnumber+number);
         }
     };
 
     this.calculate = function()
     {
-        var display = document.getElementById('display').value;
+        var display = this.getDisplay();
         //string moet gespit worden in meerdere delen om er iets mee te kunnen
         if(display != parseFloat(display) )
         {
             var antwoord = eval(display);
-            document.getElementById('display').value = antwoord;
+            this.setDisplay(antwoord);
         }
         else
         {
