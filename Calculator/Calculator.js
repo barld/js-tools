@@ -43,9 +43,16 @@ function Calculator()
         }
     };
 
-    this.backspace = function()
+    this.backspace = function(part)
     {
-        var value = this.getDisplay();
-        this.setDisplay(value.substr(0, value.length-1));
+        if(part == "ALL")
+        {
+            this.setDisplay("");
+        }
+        else
+        {
+            var value = this.getDisplay();
+            this.setDisplay(value.substr(0, value.length-1));
+        }
     };
 };
