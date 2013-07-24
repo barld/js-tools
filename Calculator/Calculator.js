@@ -42,4 +42,10 @@ function Calculator()
             alert("je moet het wel goed invullen");
         }
     };
+
+    this.backspace = function()
+    {
+        var value = this.getDisplay();
+        this.setDisplay(value.substr(0, value.length-1));
+    };
 };

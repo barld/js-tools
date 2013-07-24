@@ -11,3 +11,6 @@ input[type=button], input[type=submit]
 .number:hover{
     background-color: lightblue
 }
+.del{
+    background: url(./img/backspace.png) no-repeat center;
+}
