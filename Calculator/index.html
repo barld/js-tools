@@ -19,35 +19,39 @@
     </script>
     <script src="Calculator.js"></script>
 </head>
-<body>
-    <form action="javascript:void(0);">
-        <script>
-            var Calculator = new Calculator();
-        </script>
-        <input type="text" name="display" id="display" maxlength="20" autofocus="autofocus" />
-        <br/>
-        <input class="number" type="button" value="1" onclick="Calculator.addCharter(1)" />
-        <input class="number" type="button" value="2" onclick="Calculator.addCharter(2)" />
-        <input class="number" type="button" value="3" onclick="Calculator.addCharter(3)" />
-        <input class="del" type="button" value=" " onclick="Calculator.backspace()" />
-        <input class="" type="button" value="AC" onclick="Calculator.backspace('ALL')" />
-        <br/>
-        <input class="number" type="button" value="4" onclick="Calculator.addCharter(4)" />
-        <input class="number" type="button" value="5" onclick="Calculator.addCharter(5)" />
-        <input class="number" type="button" value="6" onclick="Calculator.addCharter(6)" />
-        <input type="button" value="+" onclick="Calculator.addCharter('+')" />
-        <input type="button" value="-" onclick="Calculator.addCharter('-')" />
-        <br/>
-        <input class="number" type="button" value="7" onclick="Calculator.addCharter(7)" />
-        <input class="number" type="button" value="8" onclick="Calculator.addCharter(8)" />
-        <input class="number" type="button" value="9" onclick="Calculator.addCharter(9)" />
-        <input type="button" value="*" onclick="Calculator.addCharter('*')" />
-        <input type="button" value="/" onclick="Calculator.addCharter('/')" />
-        </br>
-        <input type="button" value=" " onclick="Calculator.addCharter('')" />
-        <input class="number" type="button" value="0" onclick="Calculator.addCharter(0)" />
-        <input type="button" value="." onclick="Calculator.addCharter('.')" />
-        <input type="submit" value="=" onclick="Calculator.calculate()" />
-    </form>
+    <body>
+    <div id="container">
+        <form action="javascript:void(0);">
+            <script>
+                var Calculator = new Calculator();
+            </script>
+            <input type="text" name="display.sum" id="display_sum" maxlength="20" autofocus="autofocus" />
+            <input type="text" name="display.answer" id="display_answer" maxlength="20" disabled />
+            <br/>
+            <input class="number" type="button" value="1" onclick="Calculator.addCharter(1)" />
+            <input class="number" type="button" value="2" onclick="Calculator.addCharter(2)" />
+            <input class="number" type="button" value="3" onclick="Calculator.addCharter(3)" />
+            <input class="del" type="button" value=" " onclick="Calculator.backspace()" />
+            <input class="" type="button" value="AC" onclick="Calculator.backspace('ALL')" />
+            <br/>
+            <input class="number" type="button" value="4" onclick="Calculator.addCharter(4)" />
+            <input class="number" type="button" value="5" onclick="Calculator.addCharter(5)" />
+            <input class="number" type="button" value="6" onclick="Calculator.addCharter(6)" />
+            <input type="button" value="+" onclick="Calculator.addCharter('+')" />
+            <input type="button" value="-" onclick="Calculator.addCharter('-')" />
+            <br/>
+            <input class="number" type="button" value="7" onclick="Calculator.addCharter(7)" />
+            <input class="number" type="button" value="8" onclick="Calculator.addCharter(8)" />
+            <input class="number" type="button" value="9" onclick="Calculator.addCharter(9)" />
+            <input type="button" value="*" onclick="Calculator.addCharter('*')" />
+            <input type="button" value="/" onclick="Calculator.addCharter('/')" />
+            </br>
+            <input type="button" value="Ans" onclick="Calculator.addCharter('Ans')" />
+            <input class="number" type="button" value="0" onclick="Calculator.addCharter(0)" />
+            <input type="button" value="." onclick="Calculator.addCharter('.')" />
+            <input type="submit" value="=" onclick="Calculator.calculate()" />
+            <input type="button" value="PI" onclick="Calculator.addCharter('PI')" />
+        </form>
+    </div>
 </body>
 </html>

@@ -1,3 +1,7 @@
+#container{
+    width: 220px;
+    margin: 0 auto;
+}
 input[type=button], input[type=submit]
 {
     width: 40px;
@@ -13,4 +17,11 @@ input[type=button], input[type=submit]
 }
 .del{
     background: url(./img/backspace.png) no-repeat center;
+}
+#display_sum, #display_answer
+{
+    width: 210px;
+    height: 25px;
+    font-size: 18px;
+    margin-bottom: 7px;
 }

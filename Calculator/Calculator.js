@@ -7,52 +7,84 @@
 
 function Calculator()
 {
-    this.getDisplay = function()
-    {
-        return document.getElementById('display').value;
-    }
 
-    this.setDisplay = function(value)
+   this.Answeregiven = false
+
+    this.getDisplay = function(field)
     {
-        document.getElementById('display').value = value;
-        return true;
+        if(field === "sum")
+        {
+            return document.getElementById('display_sum').value;
+        }else if(field === "answer")
+        {
+            return document.getElementById('display_answer').value;
+        }
+        return false
+    };
+
+    this.setDisplay = function(value, field)
+    {
+        if(field === "sum")
+        {
+            document.getElementById('display_sum').value = value;
+            return true;
+        }else if(field === "answer")
+        {
+            document.getElementById('display_answer').value = value;
+            return true;
+        }
+
     };
 
     // functie om in display getallen en symbolen toe te voegen.
     this.addCharter = function(number)
     {
-        if(this.getDisplay().length<20)
+        var list = ['*', '/', '+', '-'];
+        if(this.Answeregiven && list.indexOf(number) != -1)
         {
-            var firstnumber = this.getDisplay();
-            this.setDisplay(firstnumber+number);
+            this.setDisplay('Ans', "sum");
+        }
+        if(this.getDisplay("sum").length<20)
+        {
+            var firstnumber = this.getDisplay("sum");
+            this.setDisplay(firstnumber+number, "sum");
+            this.Answeregiven = false;
         }
     };
 
     this.calculate = function()
     {
-        var display = this.getDisplay();
-        //string moet gespit worden in meerdere delen om er iets mee te kunnen
-        if(display != parseFloat(display) )
+        var display = this.getDisplay("sum");
+        // vervang stukken string voor een cijfer
+        display = this.valueReplace(display);
+
+        if(true)// moet controlle functie komen of er wel een valide string is "display != parseFloat(display)" werkt niet altijd niet bij langere cijfers als pi
         {
             var antwoord = eval(display);
-            this.setDisplay(antwoord);
+            this.setDisplay(antwoord, "answer");
+            this.Answeregiven = true;
+            return true;
         }
-        else
-        {
-            alert("je moet het wel goed invullen");
-        }
+        alert("je moet het wel goed invullen");
+        return false;
     };
 
     this.backspace = function(part)
     {
         if(part == "ALL")
         {
-            this.setDisplay("");
+            this.setDisplay("", "sum");
         }
         else
         {
             var value = this.getDisplay();
-            this.setDisplay(value.substr(0, value.length-1));
+            this.setDisplay(value.substr(0, value.length-1), "sum");
         }
+    };
+
+    this.valueReplace = function(string)//moet netter gemaakt worden voor geval dat er nog veel functies voor vervangen bijkomen
+    {
+        var back = string.replace(/PI/gi, Math.PI);//vervangt nu ok meerdere PI's
+        return back.replace(/Ans/gi, this.getDisplay("answer"));
     };
 };
