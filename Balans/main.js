@@ -11,9 +11,9 @@ function Balans()
 
     this.rotation = 0;
 
-    this.getVal = function(side)
+    this.getVal = function(side, propertie)
     {
-        return $('#length-'+side).val();
+        return $('#'+propertie+'-'+side).val();
     };
 
     this.rotate = function()
@@ -42,7 +42,7 @@ function Balans()
 
     this.sideLength = function(side)
     {
-        $('#balans-'+side).width(this.getVal(side));
+        $('#balans-'+side).width(this.getVal(side , 'length'));
         //reset
         $('#balans-left').css('margin-left', 0);
         $('#balans-right').css('margin-right', 0);
@@ -55,14 +55,32 @@ function Balans()
             }
 
         }*/
-        if(this.getVal('left') < this.getVal('right'))
+        if(this.getVal('left', 'length') < this.getVal('right', 'length'))
         {
-            $('#balans-left').css('margin-left', this.getVal('right')- this.getVal('left'));
-        } else if(this.getVal('left') > this.getVal('right'))
+            $('#balans-left').css('margin-left', this.getVal('right', 'length')- this.getVal('left', 'length'));
+        } else if(this.getVal('left', 'length') > this.getVal('right', 'length'))
         {
-            $('#balans-right').css('margin-right', this.getVal('left') - this.getVal('right'));
+            $('#balans-right').css('margin-right', this.getVal('left', 'length') - this.getVal('right', 'length'));
         }
 
+        this.calculateBalans = function()
+        {
+            if(this.getVal('left', 'kracht')*this.getVal('left', 'length') > this.getVal('right', 'kracht')*this.getVal('right', 'length'))
+            {
+                this.rotation = -20;
+                this.rotate();
+            }
+            else if(this.getVal('left', 'kracht')*this.getVal('left', 'length') == this.getVal('right', 'kracht')*this.getVal('right', 'length'))
+            {
+                this.rotation = 0;
+                this.rotate();
+            }
+            else if(this.getVal('left', 'kracht')*this.getVal('left', 'length') < this.getVal('right', 'kracht')*this.getVal('right', 'length'))
+            {
+                this.rotation = 20;
+                this.rotate();
+            }
+        }
     };
 }
 
