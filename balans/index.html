@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>balans</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
+    <script src="rotate.js" ></script><!-- zie voor documentatie https://code.google.com/p/jqueryrotate/w/list -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37303062-1']);
+        _gaq.push(['_setDomainName', 'barld.nl']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <script>var Balans = new Balans();</script>
+    <form action="javascript:void(0);" style="float: left;">
+        <label for="length-left">length-left</label>
+        <input type="number" onkeyup="Balans.sideLength('left')" id="length-left" value="100" max="500" />
+    </form>
+    <div id="container">
+        <div id="balans">
+            <div id="balans-left"></div>
+            <div id="balans-right"></div>
+        </div>
+        <div id="triangle"></div>
+    </div>
+    <form action="javascript:void(0);" style="float: right;">
+        <label for="length-right">length-right</label>
+        <input type="number" onkeyup="Balans.sideLength('right')" id="length-right" value="100"/>
+    </form>
+    <div>
+        <button onclick="Balans.turn('left')">&lt;-</button>
+        <button onclick="Balans.turn('reset')">(reset)</button>
+        <button onclick="Balans.turn('right')">-></button>
+    </div>
+</body>
+</html>
