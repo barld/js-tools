@@ -1,0 +1,41 @@
+body
+{
+    margin-top: 100px;
+    text-align: center;
+}
+
+#container
+{
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#balans
+{
+    float:left;
+}
+
+#balans-left
+{
+    float: left;
+    background-color: red;
+    height: 2px;
+    width: 100px;
+}
+#balans-right
+{
+    float: left;
+    background-color: black;
+    height: 2px;
+    width: 100px;
+}
+
+#triangle {
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-bottom: 50px solid blue;
+}
