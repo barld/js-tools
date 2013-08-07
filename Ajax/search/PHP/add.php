@@ -1,3 +1,10 @@
+<a href="../">back</a>
+<form method="POST">
+    <label for="naam">naam</label>
+    <input type="text" id="naam" name="naam"/>
+    <input type="submit">
+</form>
+
 <?php
 /**
  * Created by JetBrains PhpStorm.
@@ -16,8 +23,3 @@ if(isset($_POST['naam']))
 }
 ?>
 
-<form method="POST">
-    <label for="naam">naam</label>
-    <input type="text" id="naam" name="naam"/>
-    <input type="submit">
-</form>
