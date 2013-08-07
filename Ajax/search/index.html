@@ -2,19 +2,20 @@
 <html>
 <head>
     <title>search</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
+    <script src="JS/search.js"></script>
+    <script>var zoeken = new Search()</script>
 </head>
 <body>
     <h1>Search Example</h1>
     <form>
         <label for="search">search</label>
-        <input type="text" id="search"/>
+        <input type="text" id="search" oninput="zoeken.zoek();"/>
     </form>
     <hr />
     <h2>list names</h2>
     <ol>
 
     </ol>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
-    <script src="JS/search.js"></script>
 </body>
 </html>
