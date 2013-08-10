@@ -85,6 +85,17 @@ function Calculator()
     this.valueReplace = function(string)//moet netter gemaakt worden voor geval dat er nog veel functies voor vervangen bijkomen
     {
         var back = string.replace(/PI/gi, Math.PI);//vervangt nu ok meerdere PI's
-        return back.replace(/Ans/gi, this.getDisplay("answer"));
+
+        //worteltrekken
+        if(back.match("sqrt\\((.*)\\)"))
+        {
+            back = back.replace(back.match("sqrt\\((.*)\\)")[0] , Math.sqrt(back.match("sqrt\\((.*)\\)")[1]));
+        }
+
+        back = back.replace(/Ans/gi, this.getDisplay("answer"));
+
+        return back;
     };
+
+
 };
