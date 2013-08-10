@@ -17,14 +17,13 @@
         })();
 
     </script>
+    <!-- jquery toegevoegd voor sommige trucjes -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
     <script src="Calculator.js"></script>
 </head>
     <body>
     <div id="container">
         <form action="javascript:void(0);">
-            <script>
-                var Calculator = new Calculator();
-            </script>
             <input type="text" name="display.sum" id="display_sum" maxlength="20" autofocus="autofocus" />
             <input type="text" name="display.answer" id="display_answer" maxlength="20" disabled />
             <br/>
@@ -55,5 +54,12 @@
             <input type="button" value="PI" onclick="Calculator.addCharter('PI')" />
         </form>
     </div>
+    <script>
+        //aanroepen als document is geladen
+        if($(document).ready(function(){}))
+        {
+            var Calculator = new Calculator();
+        }
+    </script>
 </body>
 </html>
