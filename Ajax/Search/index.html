@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-        <!-- lijst met tools -->
 <html>
 <head>
-    <title>Tools</title>
+    <title>search</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
+    <script src="JS/search.js"></script>
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
@@ -17,21 +18,19 @@
         })();
 
     </script>
-    <script src="indexlist.js"></script>
-    <script>
-    var list = new Array();
-    list = {
-        Calculator: './Calculator',
-        Balans : './Balans',
-        Search: './Ajax/Search',
-        SteenPapierSchaar: './Rock-Paper-Scissors'
-    }
-    list = makeList(list);</script>
+    <script>var zoeken = new Search()</script>
 </head>
 <body>
-    <h1>tools</h1>
-    <script>
-        document.write(list);
-    </script>
+    <a href="PHP/add.php">voeg naam toe</a>
+    <h1>Search Example</h1>
+    <form>
+        <label for="search">search</label>
+        <input type="text" id="search" oninput="zoeken.zoek();"/>
+    </form>
+    <hr />
+    <h2>list names</h2>
+    <ol>
+
+    </ol>
 </body>
 </html>
